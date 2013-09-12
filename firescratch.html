@@ -31,10 +31,10 @@
       });
       myDataRef.on('child_added', function(snapshot) {
         var message = snapshot.val();
-        displayChatMessage(message.name, message.text);
+        displayChatMessage(message.from, message.body);
       });
-      function displayChatMessage(name, text) {
-        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+      function displayChatMessage(from, body) {
+        $('<div/>').text(body).prepend($('<em/>').text(from+': ')).appendTo($('#messagesDiv'));
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
     </script>
