@@ -20,7 +20,7 @@
   
 
   <div id='main_content'>
-    <h1>Version 3 - Login support</h1>
+    <h1>Version 4 - Login Logout</h1>
     <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
@@ -46,6 +46,9 @@
           console.log('auth: ' + auth);
         }
       });
+      if ( auth ) {
+        auth.logout();
+      }
       
       
       $('#messageInput').keypress(function (e) {
