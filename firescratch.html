@@ -17,10 +17,16 @@
   <body>
 
   <div id='main_content'>
-  <div id='messagesDiv'></div>
+    <div id='messagesDiv'></div>
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
-    <script>
+    
+    <div id='logonDiv'></div>
+    <input type='text' id='email' placeholder='Email'>
+    <input type='text' id='password' placeholder='Password'>
+  </div>
+  
+  <script>
       var myDataRef = new Firebase('https://txk.firebaseio.com/scratch');
       $('#messageInput').keypress(function (e) {
         if (e.keyCode == 13) {
@@ -39,6 +45,5 @@
         $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
       };
     </script>
-  </div>
   </body>
 </html>
