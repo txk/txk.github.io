@@ -20,12 +20,12 @@
     <input type='text' id='nameInput' placeholder='Name'>
     <input type='text' id='messageInput' placeholder='Message'>
     <script>
-      var myDataRef = new Firebase('https://txk.firebaseio.com/txk/scratch');
+      var myDataRef = new Firebase('https://txk.firebaseio.com/scratch');
       $('#messageInput').keypress(function (e) {
         if (e.keyCode == 13) {
           var name = $('#nameInput').val();
           var text = $('#messageInput').val();
-          myDataRef.push({name: name, text: text});
+          myDataRef.push({from: name, body: text, state: 0});
           $('#messageInput').val('');
         }
       });
